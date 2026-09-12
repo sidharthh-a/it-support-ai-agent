@@ -1,0 +1,20 @@
+===================================================================
+ACME Enterprise Wi-Fi (802.1X) Certificate Fix & Troubleshooting Guide
+===================================================================
+
+1. Overview:
+This guide provides resolution steps for workstations failing to connect to ACME-SECURE-WIFI
+with the error code ERR_8021X_CERT_EXPIRED or "Certificate Not Trusted".
+
+2. Root Cause:
+Radius server certificate rotation occurs annually. If a workstation is offline during certificate push,
+the local intermediate certificate store contains outdated thumbprints.
+
+3. Resolution Steps:
+Step 1: Connect workstation to ACME-GUEST network.
+Step 2: Navigate to https://cert.acme-corp.internal.
+Step 3: Download ACME-Root-CA-2026.crt certification profile.
+Step 4: Install Certificate:
+  - macOS: Open Keychain Access -> System -> Certificates -> Trust: Always Trust.
+  - Windows: Double-click .crt file -> Place in Trusted Root Certification Authorities.
+Step 5: Re-select ACME-SECURE-WIFI and enter corporate credentials.

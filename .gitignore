@@ -1,0 +1,23 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local AI agent files
+.freebuff/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+dist/
+
+# Logs
+*.log
