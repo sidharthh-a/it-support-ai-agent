@@ -28,15 +28,15 @@ An enterprise-grade, production-style **AI IT Support platform** with a grounded
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│                        nginx (reverse proxy)                          │
-│        serves React SPA   •   proxies /api → backend (SSE-safe)       │
+│                        nginx (reverse proxy)                         │
+│        serves React SPA   •   proxies /api → backend (SSE-safe)      │
 └──────────────────────────────────┬───────────────────────────────────┘
                                    ▼
 ┌──────────────────────────────────────────────────────────────────────┐
-│                          FastAPI backend                              │
-│  Middleware: RequestID → SecurityHeaders → RateLimit → CORS           │
-│  Routers: auth · chat · conversations · tickets · incidents ·         │
-│           knowledge · devices · analytics · admin · health            │
+│                          FastAPI backend                             │
+│  Middleware: RequestID → SecurityHeaders → RateLimit → CORS          │
+│  Routers: auth · chat · conversations · tickets · incidents ·        │
+│           knowledge · devices · analytics · admin · health           │
 └───────────────┬──────────────────────────────────┬───────────────────┘
                 ▼                                  ▼
 ┌──────────────────────────┐        ┌──────────────────────────────┐
@@ -53,10 +53,10 @@ An enterprise-grade, production-style **AI IT Support platform** with a grounded
                 │  SQL: repository queries         │
                 ▼                                  ▼
 ┌──────────────────────────────────────────────────────────────────────┐
-│                    PostgreSQL + pgvector (source of truth)            │
-│  users · devices · support_tickets · ticket_comments · incidents ·    │
-│  error_logs · resolutions · ticket_history · conversations ·          │
-│  messages · knowledge_documents · document_chunks (vector)            │
+│                    PostgreSQL + pgvector (source of truth)           │
+│  users · devices · support_tickets · ticket_comments · incidents ·   │
+│  error_logs · resolutions · ticket_history · conversations ·         │
+│  messages · knowledge_documents · document_chunks (vector)           │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
